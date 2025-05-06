@@ -32,9 +32,9 @@ new class extends Component {
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('chirps')" :active="request()->routeIs('chirps')" wire:navigate><!-- [tl! add:start] -->
+                    <x-nav-link :href="route('chirps')" :active="request()->routeIs('chirps')" wire:navigate>
                         {{ __('Chirps') }}
-                    </x-nav-link><!-- [tl! add:end] -->
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -95,9 +95,9 @@ new class extends Component {
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('chirps')" :active="request()->routeIs('chirps')" wire:navigate><!-- [tl! add:start] -->
+            <x-responsive-nav-link :href="route('chirps')" :active="request()->routeIs('chirps')" wire:navigate>
                 {{ __('Chirps') }}
-            </x-responsive-nav-link><!-- [tl! add:end] -->
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->

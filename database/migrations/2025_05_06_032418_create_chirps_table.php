@@ -1,8 +1,10 @@
 <?php
 
+// [tl! collapse:start]
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+// [tl! collapse:end]
 
 return new class extends Migration
 {
@@ -13,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('chirps', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete(); // [tl! add]
+            $table->string('message'); // [tl! add]
             $table->timestamps();
         });
     }
-
+    // [tl! collapse:start]
     /**
      * Reverse the migrations.
      */
@@ -24,4 +28,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('chirps');
     }
+    // [tl! collapse:end]
 };

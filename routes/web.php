@@ -1,14 +1,13 @@
 <?php
 
-use App\Http\Controllers\ChirpController; // [tl! add]
+use App\Http\Controllers\ChirpController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 
-// [tl! add:start]
 Route::get('chirps', [ChirpController::class, 'index'])
     ->middleware(['auth', 'verified'])
-    ->name('chirps'); // [tl! add:end]
+    ->name('chirps');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

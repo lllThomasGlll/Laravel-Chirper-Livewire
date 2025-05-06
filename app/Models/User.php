@@ -1,9 +1,9 @@
 <?php
-// [tl! collapse:start]
+
 namespace App\Models;
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory; // [tl! collapse:end]
-use Illuminate\Database\Eloquent\Relations\HasMany; // [tl! add]
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -43,9 +43,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    // [tl! collapse:end]
-    public function chirps(): HasMany // [tl! add:start]
+
+    public function chirps(): HasMany
     {
         return $this->hasMany(Chirp::class);
-    } // [tl! add:end]
+    }
 }

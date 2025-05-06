@@ -11,6 +11,8 @@ new class extends Component { // [tl! add]
         $validated = $this->validate();
         auth()->user()->chirps()->create($validated);
         $this->message = '';
+
+        $this->dispatch('chirp-created');
     } // [tl! add:end]
 }; ?>
 <div>

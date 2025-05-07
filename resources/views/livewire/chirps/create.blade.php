@@ -4,6 +4,7 @@ use Livewire\Attributes\Validate;
 use Livewire\Volt\Component;
 
 new class extends Component {
+    #[Validate('required|string|min:3')]
     public string $message = '';
 
     public function store(): void
